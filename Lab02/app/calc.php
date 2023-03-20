@@ -3,9 +3,9 @@
 require_once dirname(__FILE__).'/../config.php';
 // 1. pobranie parametrów
 
-$ammonut = $_REQUEST ['ammonut'];
-$years = $_REQUEST ['years'];
-$interest = $_REQUEST ['interest'];
+$ammonut = $_REQUEST ['id_ammonut'];
+$years = $_REQUEST ['id_years'];
+$interest = $_REQUEST ['id_interest'];
 
 // 2. walidacja
 
