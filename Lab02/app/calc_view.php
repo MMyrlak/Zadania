@@ -28,40 +28,9 @@ if (isset($messages)) {
 ?>
 
 <?php if (isset($result)){ ?>
-<style>
-	.my-class  {
-		overflow: auto;
-		width: 100%;
-	}
-	.my-class table {
-		border: 1px solid #DEDEDF;
-		height: 100%;
-		width: 100%;
-		table-layout: fixed;
-		border-collapse: collapse;
-		border-spacing: 1px;
-		text-align: left;
-	}
-	.my-class caption {
-		caption-side: top;
-		text-align: left;
-	}
-	.my-class th {
-		border: 1px solid #DEDEDF;
-		background-color: #2B87C5;
-		color: #000000;
-		padding: 5px;
-	}
-	.my-class td {
-		border: 1px solid #DEDEDF;
-		background-color: #A2E7EC;
-		color: #000000;
-		padding: 5px;
-	}
-</style>
-<div class="my-class" role="region" tabindex="0">
-<table>
-	<caption>Table 1</caption>
+
+<div role="region" tabindex="0">
+<table >
 	<thead>
 	<tr>
 		<th>Kwota</th>
