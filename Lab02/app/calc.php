@@ -43,7 +43,7 @@ if (empty ( $messages )) {
         $interest = intval($interest);
 	
 	//wykonanie operacji
-        $result = ($ammount/(12*$years))*(1+($interest/100));
+        $result = ($ammonut/(12*$years))*(1+($interest/100));
 }
 
 // 4. Wywołanie widoku z przekazaniem zmiennych
