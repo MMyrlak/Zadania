@@ -46,7 +46,5 @@ if (empty ( $messages )) {
         $result = ($ammonut/(12*$years))*(1+($interest/100));
 }
 
-// 4. Wywołanie widoku z przekazaniem zmiennych
-// - zainicjowane zmienne ($messages,$x,$y,$operation,$result)
-//   będą dostępne w dołączonym skrypcie
+// 4. Wywo�anie widoku
 include 'calc_view.php';
