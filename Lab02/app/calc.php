@@ -1,70 +1,49 @@
 <?php
 // KONTROLER strony kalkulatora
 require_once dirname(__FILE__).'/../config.php';
+// 1. pobranie parametr體
 
-// W kontrolerze niczego nie wysy艂a si臋 do klienta.
-// Wys艂aniem odpowiedzi zajmie si臋 odpowiedni widok.
-// Parametry do widoku przekazujemy przez zmienne.
+$ammonut = $_REQUEST ['ammonut'];
+$years = $_REQUEST ['years'];
+$interest = $_REQUEST ['interest'];
 
-// 1. pobranie parametr贸w
+// 2. walidacja
 
-$x = $_REQUEST ['x'];
-$y = $_REQUEST ['y'];
-$operation = $_REQUEST ['op'];
-
-// 2. walidacja parametr贸w z przygotowaniem zmiennych dla widoku
-
-// sprawdzenie, czy parametry zosta艂y przekazane
-if ( ! (isset($x) && isset($y) && isset($operation))) {
-	//sytuacja wyst膮pi kiedy np. kontroler zostanie wywo艂any bezpo艣rednio - nie z formularza
-	$messages [] = 'B艂臋dne wywo艂anie aplikacji. Brak jednego z parametr贸w.';
+if ( ! (isset($ammonut) && isset($years) && isset($interest))) {
+	$messages [] = 'Brak parametr體!!!';
 }
 
-// sprawdzenie, czy potrzebne warto艣ci zosta艂y przekazane
-if ( $x == "") {
-	$messages [] = 'Nie podano liczby 1';
+if ( $ammonut == "") {
+	$messages [] = 'Nie podano kwoty';
 }
-if ( $y == "") {
-	$messages [] = 'Nie podano liczby 2';
+if ( $years == "") {
+	$messages [] = 'Nie podano na ile lat';
+}
+if ( $interest == "") {
+	$messages [] = 'Nie podano oprocentowania';
 }
 
-//nie ma sensu walidowa膰 dalej gdy brak parametr贸w
 if (empty( $messages )) {
-	
-	// sprawdzenie, czy $x i $y s膮 liczbami ca艂kowitymi
-	if (! is_numeric( $x )) {
-		$messages [] = 'Pierwsza warto艣膰 nie jest liczb膮 ca艂kowit膮';
+	if (! is_numeric( $ammonut )) {
+		$messages [] = 'B酬dna kwota';
 	}
-	
-	if (! is_numeric( $y )) {
-		$messages [] = 'Druga warto艣膰 nie jest liczb膮 ca艂kowit膮';
-	}	
+	if (! is_numeric( $years )) {
+		$messages [] = 'B酬dna ilo滄 lat';
+	}
+        if (! is_numeric( $interest )) {
+		$messages [] = 'B酬dne oprecentowanie';
+	}
 
 }
+// 3. oblicz kredyt
 
-// 3. wykonaj zadanie je艣li wszystko w porz膮dku
-
-if (empty ( $messages )) { // gdy brak b艂臋d贸w
-	
-	//konwersja parametr贸w na int
-	$x = intval($x);
-	$y = intval($y);
+if (empty ( $messages )) {
+	$ammonut = intval($ammonut);
+	$years = intval($years);
+        $interest = intval($interest);
 	
 	//wykonanie operacji
-	switch ($operation) {
-		case 'minus' :
-			$result = $x - $y;
-			break;
-		case 'times' :
-			$result = $x * $y;
-			break;
-		case 'div' :
-			$result = $x / $y;
-			break;
-		default :
-			$result = $x + $y;
-			break;
-	}
+        $result = ($ammount/(12*$years))*(1+($interest/100));
 }
 
 // 4. Wywo艂anie widoku z przekazaniem zmiennych
