@@ -8,7 +8,7 @@
 
 <form action="<?php print(_APP_URL);?>/app/calc.php" method="post">
     <label for="id_amount">Kwota: </label>
-    <input id="id_amount" type="text" name="ammoun" value="<?php if(isset($ammonut)) print($ammonut); ?>" /><br />
+    <input id="id_amount" type="text" name="ammonut" value="<?php if(isset($ammonut)) print($ammonut); ?>" /><br />
     <label for="id_years">Lata: </label>
     <input id="id_years" type="text" name="years" value="<?php if(isset($years)) print($years); ?>" /><br />
     <label for="id_interest">Oprocentowanie: </label>
