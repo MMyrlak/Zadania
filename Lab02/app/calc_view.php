@@ -5,17 +5,15 @@
 <title>Kalkulator</title>
 </head>
 <body>
-
-<form action="<?php print(_APP_URL);?>/app/calc.php" method="post">
-    <label for="id_amount">Kwota: </label>
-    <input id="id_amount" type="text" name="ammonut" value="<?php if(isset($ammonut)) print($ammonut); ?>" /><br />
-    <label for="id_years">Lata: </label>
-    <input id="id_years" type="text" name="years" value="<?php if(isset($years)) print($years); ?>" /><br />
-    <label for="id_interest">Oprocentowanie: </label>
-    <input id="id_interest" type="text" name="interest" value="<?php if(isset($interest)) print($interest); ?>" /><br />
-    <input type="submit" value="Oblicz" />
-</form>	
-
+    <form action="<?php print(_APP_URL);?>/app/calc.php" method="post">
+        <label for="id_amount">Kwota: </label>
+        <input id="id_amount" type="text" name="ammonut" value="<?php if(isset($ammonut)) print($ammonut); ?>" /><br />
+        <label for="id_years">Lata: </label>
+        <input id="id_years" type="text" name="years" value="<?php if(isset($years)) print($years); ?>" /><br />
+        <label for="id_interest">Oprocentowanie: </label>
+        <input id="id_interest" type="text" name="interest" value="<?php if(isset($interest)) print($interest); ?>" /><br />
+        <input type="submit" value="Oblicz" />
+    </form>
 <?php
 //wyświeltenie listy błędów, jeśli istnieją
 if (isset($messages)) {
@@ -30,8 +28,32 @@ if (isset($messages)) {
 ?>
 
 <?php if (isset($result)){ ?>
-<div style="margin: 20px; padding: 10px; border-radius: 5px; background-color: #ff0; width:300px;">
-<?php echo 'Wynik: '.$result; ?>
+<div role="region" tabindex="0">
+<table>
+	<caption>Table 1</caption>
+	<thead>
+	<tr>
+		<th>Kwota</th>
+		<th>Lata</th>
+		<th>Oprocentowanie</th>
+		<th>Rata</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td><?php echo $ammonut?></td>
+		<td><?php echo $years?></td>
+		<td><?php echo $interest."%"?></td>
+		<td><?php echo $result?></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	</tbody>
+</table>
 </div>
 <?php } ?>
 
