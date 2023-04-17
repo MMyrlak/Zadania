@@ -8,7 +8,6 @@ class CalcCtrl {
     private $forms;
     private $messages;
     private $result;
-    public $hide_intro = false;
     
     public function __construct(){
         $this->forms = new CalcForm();
@@ -25,7 +24,6 @@ class CalcCtrl {
 	if (!isset($this->forms->ammount) && isset($this->forms->years) && isset($this->forms->interes)) {
 		return false;
 	}
-        $hide_intro = true;
 	if ( $this->forms->ammount == "") {
             $this->messages->addError('Nie podano kwoty'); 
         }
@@ -59,8 +57,8 @@ class CalcCtrl {
             $this->forms->interes = intval($this->forms->interes);
             
             $this->result->result = ($this->forms->ammount/(12*$this->forms->years))*(1+($this->forms->interes));
-            $this->messages->addInfo('Wykonano Obliczenia');
         }
+        $this-> generateView();
     }
     
     public function generateView() {
@@ -71,14 +69,13 @@ class CalcCtrl {
         
         $smarty ->assign('page_title','Kalkulator kredytowy');
         $smarty ->assign('page_descripton','Prosty kalkulator wyliczajacy wysokosc kreydtu');
-        $smarty ->assign('page_header','Lab04 - Szablon SMARTY');
-        $smarty->assign('hide_intro',$hide_intro);
+        $smarty ->assign('page_header','Lab05 - Obiektowoœæ');
         
         $smarty ->assign('forms', $this->forms);
         $smarty ->assign('result', $this->result);
-        $smarty ->assign('messages', $this->result);
+        $smarty ->assign('messages', $this->messages);
 
-        $smarty -> display($conf->root_path.'/app/Calc.tlp');
+        $smarty -> display($conf->root_path.'\app\calc.tpl');
     }
         
 

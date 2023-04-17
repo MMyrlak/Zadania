@@ -9,7 +9,6 @@
 <body class="landing is-preload">
 <!-- Page Wrapper -->
 	<div id="page-wrapper">
-	{if !$hide_intro}
             <section id="banner">
                 <div class="inner">
                     <h2>{$page_title|default:"Default Title"}</h2>
@@ -18,7 +17,6 @@
 		</div>
                     <a href="#calc" class="more scrolly">Policz</a>
 		</section>
-        {/if}
                 <!-- Kalkulator -->
                 <section id="calc" class="wrapper style1 special">
                     <div class="inner">
@@ -33,12 +31,12 @@
 		</footer>
 	</div>
 	<!-- Scripts -->
-	<script src="{$app_url}/assets/js/jquery.min.js"></script>
-	<script src="{$app_url}/assets/js/jquery.scrollex.min.js"></script>
-	<script src="{$app_url}/assets/js/jquery.scrolly.min.js"></script>
-	<script src="{$app_url}/assets/js/browser.min.js"></script>
-	<script src="{$app_url}/assets/js/breakpoints.min.js"></script>
-	<script src="{$app_url}/assets/js/util.js"></script>
-	<script src="{$app_url}/assets/js/main.js"></script>
+	<script src="{$conf->app_url}/assets/js/jquery.min.js"></script>
+	<script src="{$conf->app_url}/assets/js/jquery.scrollex.min.js"></script>
+	<script src="{$conf->app_url}/assets/js/jquery.scrolly.min.js"></script>
+	<script src="{$conf->app_url}/assets/js/browser.min.js"></script>
+	<script src="{$conf->app_url}/assets/js/breakpoints.min.js"></script>
+	<script src="{$conf->app_url}/assets/js/util.js"></script>
+	<script src="{$conf->app_url}/assets/js/main.js"></script>
 </body>
 </html>
