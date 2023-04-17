@@ -3,8 +3,8 @@
             <title>{$page_header|default:"Default Title"}</title>
             <meta charset="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-            <link rel="stylesheet" href="{$app_url}/assets/css/main.css" />
-            <noscript><link rel="stylesheet" href="{$app_url}/assets/css/noscript.css" /></noscript>
+            <link rel="stylesheet" href="{$conf->app_url}/assets/css/main.css" />
+            <noscript><link rel="stylesheet" href="{$conf->app_url}/assets/css/noscript.css" /></noscript>
     </head>
 <body class="landing is-preload">
 <!-- Page Wrapper -->
@@ -16,7 +16,7 @@
                     <a href="http://html5up.net">HTML5 UP</a>
 		</div>
                     <a href="#calc" class="more scrolly">Policz</a>
-		</section>
+            </section>
                 <!-- Kalkulator -->
                 <section id="calc" class="wrapper style1 special">
                     <div class="inner">

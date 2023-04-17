@@ -4,12 +4,13 @@ require_once $conf->root_path.'/lib/smarty/Smarty.class.php';
 require_once $conf->root_path.'/lib/Messages.class.php';
 require_once $conf->root_path.'/app/CalcForm.class.php';
 require_once $conf->root_path.'/app/CalcResult.class.php';
+
 class CalcCtrl {
     private $forms;
     private $messages;
     private $result;
     
-    public function __construct(){
+   public function __construct(){
         $this->forms = new CalcForm();
         $this->messages = new Messages();
         $this->result = new CalcResult();
@@ -22,7 +23,8 @@ class CalcCtrl {
     
     public function validate(){
 	if (!isset($this->forms->ammount) && isset($this->forms->years) && isset($this->forms->interes)) {
-		return false;
+            echo "blad";
+            return false;
 	}
 	if ( $this->forms->ammount == "") {
             $this->messages->addError('Nie podano kwoty'); 
@@ -57,6 +59,7 @@ class CalcCtrl {
             $this->forms->interes = intval($this->forms->interes);
             
             $this->result->result = ($this->forms->ammount/(12*$this->forms->years))*(1+($this->forms->interes));
+            
         }
         $this-> generateView();
     }
@@ -69,7 +72,7 @@ class CalcCtrl {
         
         $smarty ->assign('page_title','Kalkulator kredytowy');
         $smarty ->assign('page_descripton','Prosty kalkulator wyliczajacy wysokosc kreydtu');
-        $smarty ->assign('page_header','Lab05 - Obiektowoœæ');
+        $smarty ->assign('page_header','Lab05 - Obiektowosc');
         
         $smarty ->assign('forms', $this->forms);
         $smarty ->assign('result', $this->result);
