@@ -2,5 +2,5 @@
 class CalcForm {
     public $ammount; 
     public $years;
-    public $interes;
+    public $interest;
 }
