@@ -9,7 +9,7 @@ function &getConf(){
 }
 
 require_once getConf()->root_path.'/core/Messages.class.php';
-$msgs = new Messages();
+$msgs = new core\Messages();
 
 function &getMessages(){ global $msgs; return $msgs; }
 
