@@ -5,7 +5,7 @@
         <div class="row gtr-uniform">
             <div class="col-6 col-12-xsmall">
                 <label for="id_amount">Kwota: </label>
-                <input id="id_amount" type="text" name="ammonut" value="{$forms->ammount}" placeholder="Kwota" />
+                <input id="id_amount" type="text" name="ammount" value="{$forms->ammount}" placeholder="Kwota" />
             </div>
             <div class="col-6 col-12-xsmall">
                 <label for="id_years">Lata: </label>
@@ -39,7 +39,7 @@
             </div>
             {/if}                  
 
-            {if isset($result->result)}
+            {if isset($res->result)}
                 <div class="table-wrapper">
                     <table class="alt">
                         <thead>
@@ -55,7 +55,7 @@
                                 <td>{$forms->ammount}</td>
                                 <td>{$forms->years}</td>
                                 <td>{$forms->interest}%</td>
-                                <td>{$result->result}</td>
+                                <td>{$res->result}</td>
                             </tr>
                         </tbody>
                     </table>   

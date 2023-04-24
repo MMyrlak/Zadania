@@ -1,7 +1,6 @@
 <?php
-
 require_once dirname(__FILE__).'/core/Config.class.php';
-$conf = new Config();
+$conf = new core\Config();
 require_once dirname(__FILE__).'/config.php';
 
 function &getConf(){ 
@@ -10,7 +9,7 @@ function &getConf(){
 }
 
 require_once getConf()->root_path.'/core/Messages.class.php';
-$msgs = new core\Messages();
+$msgs = new Messages();
 
 function &getMessages(){ global $msgs; return $msgs; }
 

@@ -62,7 +62,7 @@ class CalcCtrl {
     }
     
     public function generateView() {
-
+        
         getSmarty()->assign('page_title','Kalkulator kredytowy');
         getSmarty()->assign('page_descripton','Prosty kalkulator wyliczajacy wysokosc kredytu');
         getSmarty()->assign('page_header','Lab06a - zmiana struktury');
@@ -70,7 +70,7 @@ class CalcCtrl {
         getSmarty()->assign('hide_intro',$this->hide_intro);
         
         getSmarty()->assign('forms', $this->forms);
-        getSmarty()->assign('result', $this->result);
+        getSmarty()->assign('res', $this->result);
 
         getSmarty()-> display('CalcView.tpl');
     }

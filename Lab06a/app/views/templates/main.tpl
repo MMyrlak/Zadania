@@ -10,7 +10,7 @@
 <body class="landing is-preload">
 <!-- Page Wrapper -->
 	<div id="page-wrapper">
-            {if !$hide_intro }
+            {if !$hide_intro}
             <section id="banner">
                 <div class="inner">
                     <h2>{$page_title|default:"Default Title"}</h2>
