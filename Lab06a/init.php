@@ -1,6 +1,6 @@
 <?php
 require_once dirname(__FILE__).'/core/Config.class.php';
-$conf = new core\Config();
+$conf = new Config();
 require_once dirname(__FILE__).'/config.php';
 
 function &getConf(){ 
@@ -29,13 +29,6 @@ function &getSmarty(){
 	return $smarty;
 }
 
-require_once getConf()->root_path.'/core/ClassLoader.class.php';
-
-$cloader = new core\ClassLoader();
-function &getLoader() {
-    global $cloader;
-    return $cloader;
-}
 
 require_once getConf()->root_path.'/core/functions.php';
 
