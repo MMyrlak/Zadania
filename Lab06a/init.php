@@ -3,10 +3,7 @@ require_once dirname(__FILE__).'/core/Config.class.php';
 $conf = new Config();
 require_once dirname(__FILE__).'/config.php';
 
-function &getConf(){ 
-    global $conf; 
-    return $conf;
-}
+function &getConf(){ global $conf; return $conf;}
 
 require_once getConf()->root_path.'/core/Messages.class.php';
 $msgs = new Messages();
