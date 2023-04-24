@@ -65,7 +65,7 @@ class CalcCtrl {
         
         getSmarty()->assign('page_title','Kalkulator kredytowy');
         getSmarty()->assign('page_descripton','Prosty kalkulator wyliczajacy wysokosc kredytu');
-        getSmarty()->assign('page_header','Lab06a - zmiana struktury');
+        getSmarty()->assign('page_header','Lab06b - namespaces');
         
         getSmarty()->assign('hide_intro',$this->hide_intro);
         
