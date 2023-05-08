@@ -1,6 +1,8 @@
 {extends file="main.tpl"}
 
+        
 {block name=content}
+
     <form action="{$conf->action_root}calcLoan" method="post">
         <div class="row gtr-uniform">
             <div class="col-6 col-12-xsmall">
@@ -18,6 +20,7 @@
             <div class="col-12">
                 <ul class="actions">
                     <li><input type="submit" value="Oblicz" class="primary"/></li>
+                    <li><a href="{$conf->action_url}logout" class="primary">Wyloguj</a></li>
                 </ul>
             </div>
         </div>
